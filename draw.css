@@ -1,0 +1,289 @@
+@import url('https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&display=swap');
+
+body {
+    background: #3498db;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh;
+    position: relative;
+}
+
+#screen {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+
+#pad {
+    border: 1px solid transparent;
+    background: white;
+    border-radius: 40px;
+    max-width: 90vw; /* Keep responsiveness */
+    max-height: 90vh; /* Adjust max-height to allow more vertical space*/
+    margin: 20px 0;
+}
+
+.greeting1 {
+    font-size: 1.5rem;
+    font-family: 'Merriweather';
+    color: white;
+    text-align: center;
+    margin: 10px;
+}
+
+.box {
+    width: 90%;
+    max-width: 1000px; /*Adjust the max width for the box*/
+    height: 50px;
+    border: 5px solid rgba(0, 0, 0, 0.1);
+    position: relative;
+    border-radius: 60px;
+    animation: change 5s infinite;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 1);
+    margin-top: 20px;
+}
+
+/* --- Line Width Container Styling --- */
+.LineWidth-container {
+    display: flex;
+    align-items: center;
+    position: fixed;
+    bottom: 20px;
+    left: 20px;
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 10px;
+    border-radius: 16px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    z-index: 10;
+}
+
+.LineWidth-container label {
+    font-family: din-round, sans-serif;
+    font-size: 1rem;
+    font-weight: 700;
+    color: #FFFFFF;
+    margin-right: 10px;
+}
+
+#LineWidth {
+    appearance: none;
+    background-color: #1899D6;
+    border: solid transparent;
+    border-radius: 16px;
+    border-width: 0 0 4px;
+    box-sizing: border-box;
+    cursor: pointer;
+    display: inline-block;
+    height: 40px;
+    width: 60px;
+    outline: none;
+    padding: 0 10px;
+    position: relative;
+    transition: filter .2s;
+    user-select: none;
+    -webkit-user-select: none;
+    color: white;
+    text-align: center;
+}
+
+#LineWidth:after {
+    background-clip: padding-box;
+    background-color: #1CB0F6;
+    border: solid transparent;
+    border-radius: 16px;
+    border-width: 0 0 4px;
+    bottom: -4px;
+    content: "";
+    left: 0;
+    position: absolute;
+    right: 0;
+    top: 0;
+    z-index: -1;
+}
+
+#LineWidth:hover:not(:disabled) {
+    filter: brightness(1.1);
+    -webkit-filter: brightness(1.1);
+}
+
+#LineWidth:disabled {
+    cursor: auto;
+}
+
+#LineWidth:active {
+    border-width: 4px 0 0;
+    background: none;
+}
+
+/* --- Color Container Styling --- */
+.color-container {
+    display: flex;
+    align-items: center;
+    position: fixed;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 10px;
+    border-radius: 16px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    z-index: 10;
+}
+
+.color-container label {
+    font-family: din-round, sans-serif;
+    font-size: 1rem;
+    font-weight: 700;
+    color: #FFFFFF;
+    margin-right: 10px;
+}
+
+#color {
+    appearance: none;
+    background-color: #1899D6;
+    border: solid transparent;
+    border-radius: 16px;
+    border-width: 0 0 4px;
+    box-sizing: border-box;
+    cursor: pointer;
+    display: inline-block;
+    height: 40px;
+    width: 40px;
+    outline: none;
+    padding: 0;
+    position: relative;
+    transition: filter .2s;
+    user-select: none;
+    -webkit-user-select: none;
+}
+
+#color:after {
+    background-clip: padding-box;
+    background-color: #1CB0F6;
+    border: solid transparent;
+    border-radius: 16px;
+    border-width: 0 0 4px;
+    bottom: -4px;
+    content: "";
+    left: 0;
+    position: absolute;
+    right: 0;
+    top: 0;
+    z-index: -1;
+}
+
+#color:hover:not(:disabled) {
+    filter: brightness(1.1);
+    -webkit-filter: brightness(1.1);
+}
+
+#color:disabled {
+    cursor: auto;
+}
+
+#color:active {
+    border-width: 4px 0 0;
+    background: none;
+}
+
+@keyframes change {
+    0% {
+        border-color: red;
+    }
+
+    14% {
+        border-color: orange;
+    }
+
+    28% {
+        border-color: yellow;
+    }
+
+    42% {
+        border-color: green;
+    }
+
+    56% {
+        border-color: blue;
+    }
+
+    70% {
+        border-color: indigo;
+    }
+
+    84% {
+        border-color: violet;
+    }
+}
+
+/* --- Clear Button Styling --- */
+#clear {
+    appearance: button;
+    background-color: #1899D6;
+    border: solid transparent;
+    border-radius: 16px;
+    border-width: 0 0 4px;
+    box-sizing: border-box;
+    color: #FFFFFF;
+    cursor: pointer;
+    display: inline-block;
+    font-family: din-round, sans-serif;
+    font-size: 1rem;
+    font-weight: 700;
+    letter-spacing: .8px;
+    line-height: 20px;
+    margin: 0;
+    outline: none;
+    overflow: visible;
+    padding: 13px 16px;
+    text-align: center;
+    text-transform: uppercase;
+    touch-action: manipulation;
+    transform: translateZ(0);
+    transition: filter .2s;
+    user-select: none;
+    -webkit-user-select: none;
+    vertical-align: middle;
+    white-space: nowrap;
+    position: fixed;
+    width: 15%;
+    bottom: 20px;
+    right: 20px;
+    z-index: 10;
+}
+
+#clear:after {
+    background-clip: padding-box;
+    background-color: #1CB0F6;
+    border: solid transparent;
+    border-radius: 16px;
+    border-width: 0 0 4px;
+    bottom: -4px;
+    content: "";
+    left: 0;
+    position: absolute;
+    right: 0;
+    top: 0;
+    z-index: -1;
+}
+
+#clear,
+#clear:focus {
+    user-select: auto;
+}
+
+#clear:hover:not(:disabled) {
+    filter: brightness(1.1);
+    -webkit-filter: brightness(1.1);
+}
+
+#clear:disabled {
+    cursor: auto;
+}
+
+#clear:active {
+    border-width: 4px 0 0;
+    background: none;
+}
